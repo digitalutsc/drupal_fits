@@ -73,7 +73,7 @@ class FitsJob extends JobTypeBase {
     $fit_json = json_encode($fits);
 
     // Store the whole fits to json field.
-    if ($file->hasField(field_fits)) {
+    if ($file->hasField("field_fits")) {
       $file->field_fits->setValue($fit_json);
     }
 
