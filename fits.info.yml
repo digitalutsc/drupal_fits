@@ -1,7 +1,7 @@
 name: 'Fits'
 type: module
 description: 'This module represent DSU''s approach toward Fits in our Islandora Lite Stack'
-core_version_requirement: '^8 || ^9'
+core_version_requirement: ^8.8 || ^9 || ^10
 package: 'custom'
 dependencies:
   - drupal:json_field

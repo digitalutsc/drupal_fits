@@ -2,6 +2,7 @@
 
 namespace Drupal\fits\Plugin\AdvancedQueue\JobType;
 
+use function JmesPath\search;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\file\Entity\File;
 use Drupal\advancedqueue\Job;
@@ -149,14 +150,14 @@ class FitsJob extends JobTypeBase {
     if (is_array($path)) {
       $value = "";
       foreach ($path as $p) {
-        $value = \JmesPath\search($p, $fits);
+        $value = search($p, $fits);
         if (!empty($value)) {
           break;
         }
       }
       return $value;
     }
-    return \JmesPath\search($path, $fits);
+    return search($path, $fits);
   }
 
   /**
