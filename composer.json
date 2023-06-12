@@ -20,11 +20,11 @@
         }
     },
     "require": {
-        "mtdowling/jmespath.php": "*",
-        "drupal/json_field": "*",
-        "drupal/file_entity": "*",
-        "drupal/field_permissions": "*",
-        "drupal/advancedqueue": "*"
+        "mtdowling/jmespath.php": "2.6.1",
+        "drupal/json_field": "^1.2",
+        "drupal/file_entity": "^2.0@RC",
+        "drupal/field_permissions": "^1.2",
+        "drupal/advancedqueue": "^1.0@RC"
     },
     "require-dev": {
         "phpunit/phpunit": "^8",
