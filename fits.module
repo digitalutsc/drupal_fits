@@ -40,9 +40,9 @@ function fits_theme() {
 }
 
 /**
- * Implement fits_entity_insert().
+ * Implement fits_file_insert().
  */
-function fits_entity_insert(EntityInterface $entity) {
+function fits_file_insert(EntityInterface $entity) {
   // Only extract Fits for File level only.
   if ('File' === $entity->getEntityType()->getLabel()->getUntranslatedString() && 1 === \Drupal::config('fits.fitsconfig')->get('fits-extract-ingesting')) {
     execute_fits_action($entity);
@@ -59,14 +59,8 @@ function execute_fits_action(EntityInterface $entity) {
     return;
   }
   $file = File::load($entity->id());
-
-  // Trigger generate Fits action.
-  $action = \Drupal::entityTypeManager()
-    ->getStorage('action')
-    ->load('fits_action');
-  if ($action) {
-    $action->execute([$file]);
-  }
+  $utils = \Drupal::service('fits.context_utils');
+  $utils->executeFileReactions('\Drupal\fits\Plugin\ContextReaction\FitsReaction', $file);
 }
 
 /**
