@@ -30,6 +30,14 @@ This Drupal 8/9 module consumes File Information Tool Set (Fits) to retrieve and
 
 ![Jmespath config](https://www.drupal.org/files/project-images/Screen%20Shot%202021-06-23%20at%2011.54.52%20PM.png)
 
+# Enabling FITS generation
+- To have FITS generate metadata info, you must make use of the Context module
+  - Go to `Structure > Context`
+    - Create a Context and choose the Conditions that should be true for the FITS action to proceed
+    - Under `Reaction` add a Reaction and pick `File Extract Metadata Reaction (FITS)`
+    - In the Action form that shows up for the Reaction, just pick `FITS - Generate and Extract Technical metadata for File`
+    - Ensure the context is enabled and then save
+
 ## Usage
 
 - Upload a file at `/file/add` or add a Media at `/media/add`.
