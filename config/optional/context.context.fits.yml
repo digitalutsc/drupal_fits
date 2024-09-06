@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - fits
+label: Fits
+name: fits
+group: 'Technical Metadata'
+description: 'Generate metadata for Files'
+requireAllConditions: false
+disabled: false
+conditions:
+  'entity_bundle:file':
+    id: 'entity_bundle:file'
+    negate: false
+    uuid: 24a67eee-35d3-4240-a4d9-4f4d2874b371
+    context_mapping:
+      file: '@fits.file_route_context_provider:file'
+    bundles:
+      audio: audio
+      document: document
+      file: file
+      image: image
+      video: video
+reactions:
+  fits_reaction:
+    id: fits_reaction
+    actions: fits_action
+    saved: false
+weight: 0
