@@ -8,3 +8,4 @@ dependencies:
   - drupal:file_entity
   - drupal:field_permissions
   - advancedqueue:advancedqueue
+  - drupal:context
