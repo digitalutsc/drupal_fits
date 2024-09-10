@@ -128,7 +128,8 @@ class FitsConfigForm extends ConfigFormBase {
     $form['container']['fits-services-config']['extact-fits-while-ingesting'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Extracting Fits while a file is being uploaded'),
-      '#default_value' => ($config->get("fits-extract-ingesting") !== NULL) ? $config->get("fits-extract-ingesting") : 0,
+      "#access" => FALSE,
+      '#default_value' => ($config->get("fits-extract-ingesting") !== NULL) ? $config->get("fits-extract-ingesting") : 1,
     ];
 
     // Select default fits fields.
